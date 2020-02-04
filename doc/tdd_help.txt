@@ -1,0 +1,31 @@
+
+테스트들은 결정론적(Deterministic)이어야 한다.
+
+이러한 경우 테스트가 실행 될 때마다 유지되는 값들을 반환 하기 위해서 Date.now() 함수를 mock할 수 있습니다.
+Date.now = jest.fn(() => 1482363367071);
+
+
+
+
+[jest test]
+npm test
+
+[detox test]
+react-native start
+detox test
+
+
+[xcode 업데이트 시 아래와 같은 오류들이 발생할 수 있다]
+
+Command failed: applesimutils --list --byType "iPhone 11 Pro"
+Error: Unable to obtain a list of simulators. See “applesimutils --help” for usage.
+
+Error: /Users/thewavelet/Library/Detox/ios/91ed8933271ade002983ad183fdc71a3f0ba1bca/Detox.framework could not be found, this means either you changed a version of Xcode or Detox postinstall script was unsuccessful.
+      To attempt a fix try running 'detox clean-framework-cache && detox build-framework-cache'
+
+detox clean-framework-cache && detox build-framework-cache
+
+detox[16207] INFO:  [clean-framework-cache.js] Removing framework binaries from /Users/thewavelet/Library/Detox
+Extracting Detox sources...
+Building Detox.framework from /Users/thewavelet/dev2/TDDRN/node_modules/detox/ios_src...
+
